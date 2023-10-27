@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissionDetailUiView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI title, description;
+    [SerializeField] private Image image;
 
     public void Config(MissionDetail missionDetail)
     {
@@ -15,5 +17,6 @@ public class MissionDetailUiView : MonoBehaviour
     private void MissionDetailOnOnCompleted()
     {
         Debug.Log("Mission Completed");
+        image.color = Color.green;
     }
 }

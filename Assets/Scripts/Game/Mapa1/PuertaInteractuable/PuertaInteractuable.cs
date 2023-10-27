@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SystemOfExtras;
 using UnityEngine;
 
 public class PuertaInteractuable : InteractiveObjectFather
@@ -10,6 +11,7 @@ public class PuertaInteractuable : InteractiveObjectFather
     private Vector3 rotationInicial;
     [SerializeField] private bool closeDoor;
     [SerializeField] private bool canUseAgain = true;
+    [SerializeField] private AddMissionCustom addMissionInQuest;
 
     private void Start()
     {
@@ -52,5 +54,7 @@ public class PuertaInteractuable : InteractiveObjectFather
         closeDoor = true;
         canUseAgain = false;
         Destroy(GetComponent<InteractiveObject>());
+        ServiceLocator.Instance.GetService<IStatesMissions>().MissionCompleted(IdMissions.GO_OUT_TO_HOME);
+        addMissionInQuest.AddMission();
     }
 }

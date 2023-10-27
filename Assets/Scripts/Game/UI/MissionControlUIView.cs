@@ -13,12 +13,19 @@ public class MissionControlUIView : MonoBehaviour, IStatesMissionsView
     public void Config()
     {
         ServiceLocator.Instance.RegisterService<IStatesMissionsView>(this);
-        var listOfMissions = ServiceLocator.Instance.GetService<IStatesMissions>().GetMissionsActive();
-        foreach (var missionDetail in listOfMissions)
+        ServiceLocator.Instance.GetService<IStatesMissions>().OnAddMission += AddMission;
+    }
+
+    private void AddMission(MissionDetail missionDetail)
+    {
+        var missionDetailUiView = Instantiate(missionDetailUiViewPrefab, content);
+        missionDetailUiView.Config(missionDetail);
+        missionDetail.onCompleted += () =>
         {
-            var missionDetailUiView = Instantiate(missionDetailUiViewPrefab, content);
-            missionDetailUiView.Config(missionDetail);
-        }
+            missionDetailUiView.transform.SetAsLastSibling();
+            Destroy(missionDetailUiView.gameObject, 5f);
+        };
+        missionDetailUiView.transform.SetAsFirstSibling();
     }
 
     public void OpenMissionsTab()

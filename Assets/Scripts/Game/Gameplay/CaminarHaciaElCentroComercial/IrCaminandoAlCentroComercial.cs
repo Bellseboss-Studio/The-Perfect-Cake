@@ -19,4 +19,14 @@ public class IrCaminandoAlCentroComercial : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         });
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
+        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound("000_Caminando");
+        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
+        {
+            SceneManager.LoadScene(nextScene);
+        });
+    }
 }

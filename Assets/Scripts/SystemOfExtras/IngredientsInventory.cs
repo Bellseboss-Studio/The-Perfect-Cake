@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Game.Player;
 using UnityEngine;
@@ -60,12 +61,14 @@ namespace SystemOfExtras
 
         public void CrossOutIngredient(string id)
         {
-            foreach (var ingredient in _ingredients)
+            foreach (var ingredient in _ingredients.Where(ingredient => ingredient.ID == id))
             {
-                if (ingredient.ID == id)
-                {
-                    ingredient.CrossOut();
-                }
+                ingredient.CrossOut();
+            }
+
+            foreach (var missionDetail in ingredientsDetails.Where(missionDetail => missionDetail.ingredientName == id))
+            {
+                missionDetail.IsCompleted = true;
             }
         }
 

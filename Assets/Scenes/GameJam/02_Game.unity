@@ -15400,6 +15400,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0096
       objectReference: {fileID: 0}
+    - target: {fileID: 5745319449721844162, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+        type: 3}
+      propertyPath: addMissionInQuest
+      value: 
+      objectReference: {fileID: 564375770}
     - target: {fileID: 5864753145119160339, guid: a0a8ad3171773c64ab2372c981d9f3f8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15784,6 +15789,12 @@ MonoBehaviour:
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
   minutos: 10
   nextScene: 4
+--- !u!1 &564375768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3904662077472869230, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &564375769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15797,6 +15808,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 1.56, z: 0.64}
   m_Center: {x: 0, y: 0.94, z: 0}
+--- !u!114 &564375770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564375768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17280a20b26426ba8968f03d5e1f127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idMission: 6
+  nameMission: Sal del edificio!
+  descriptionMission: Creo que el ascensor no funciona, usa las escaleras.
+  isStart: 0
 --- !u!1 &567533650
 GameObject:
   m_ObjectHideFlags: 0
@@ -23284,6 +23311,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 844319951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &849430433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849430435}
+  - component: {fileID: 849430434}
+  - component: {fileID: 849430436}
+  - component: {fileID: 849430437}
+  m_Layer: 0
+  m_Name: TriggerToCompletedLeaveTheBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &849430434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849430433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 7.32}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!4 &849430435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849430433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -82.05, y: 0, z: -44.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849430436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849430433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8400478618a6469baef203ea4312e552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idMission: 6
+--- !u!114 &849430437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849430433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e50326a6e748b4856e281bd32ad1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completedMissionCustom: {fileID: 849430436}
 --- !u!1 &851343065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066081288236842529, guid: a0a8ad3171773c64ab2372c981d9f3f8,
@@ -35821,6 +35921,66 @@ PrefabInstance:
       propertyPath: ingredients.Array.data[3]
       value: Azucar DulceRealidad
       objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[0].idMissions
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[1].idMissions
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[2].idMissions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[0].nameOfMission
+      value: Endulza tu vida
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[1].nameOfMission
+      value: Busca el Veneno
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[2].nameOfMission
+      value: Sacude el polvo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[0].ingredientName
+      value: Azucar DulceRealidad
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[1].ingredientName
+      value: Veneno de Unicornio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[2].ingredientName
+      value: Harina del Comienzo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[0].descriptionOfMission
+      value: Usualmente, los ninos lo tienen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[1].descriptionOfMission
+      value: Este objeto lo optienes de personas raras
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredientsDetails.Array.data[2].descriptionOfMission
+      value: La Harina es comun en las panaderias
+      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786045, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: missionControlUIView
@@ -43426,6 +43586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542213843}
+  - component: {fileID: 1542213844}
   m_Layer: 0
   m_Name: PointToSpawn
   m_TagString: Untagged
@@ -43448,6 +43609,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -179.005, z: 0}
+--- !u!114 &1542213844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542213842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17280a20b26426ba8968f03d5e1f127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idMission: 5
+  nameMission: Sal de la casa
+  descriptionMission: Sal de la casa por la puerta del frente
+  isStart: 1
 --- !u!1001 &1549150454
 PrefabInstance:
   m_ObjectHideFlags: 0
